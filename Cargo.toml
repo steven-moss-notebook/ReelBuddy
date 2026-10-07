@@ -1,0 +1,29 @@
+[package]
+name = "reelbuddy"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+cuda = ["llama-cpp-2/cuda"]
+vulkan = ["llama-cpp-2/vulkan"]
+
+[dependencies]
+ab_glyph = "0.2"
+bevy = "0.19.1"
+directories = "6.0.0"
+image = "0.25"
+ndarray = "0.17"
+rfd = "0.15"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1"
+toml = "1.1.6"
+video-rs = { version = "0.12.0", features = ["ndarray"] }
+llama-cpp-2 = { version = "=0.1.158", default-features = false, features = ["mtmd", "common"] }
+hf-hub = "1.0.0"
+bevy_hanabi = "0.19.0"
+bevy_flair = "0.8.1"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+llama-cpp-2 = { version = "=0.1.158", default-features = false, features = ["mtmd", "metal", "common"] }

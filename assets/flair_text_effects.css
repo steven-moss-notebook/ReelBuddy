@@ -1,0 +1,197 @@
+/* ReelBuddy Text Effects powered by Bevy Flair */
+
+@keyframes flair-shake {
+    0% { translate: 0px 0px; }
+    20% { translate: -3px 2px; }
+    40% { translate: 3px -2px; }
+    60% { translate: -2px -2px; }
+    80% { translate: 2px 2px; }
+    100% { translate: 0px 0px; }
+}
+
+@keyframes flair-bounce {
+    0%, 100% {
+        translate: 0px 0px;
+        scale: 1.0;
+    }
+    50% {
+        translate: 0px -8px;
+        scale: 1.12;
+    }
+}
+
+@keyframes flair-wave {
+    0%, 100% {
+        translate: 0px 0px;
+        scale: 1.0;
+    }
+    50% {
+        translate: 0px 5px;
+        scale: 0.96;
+    }
+}
+
+@keyframes flair-pulse {
+    0%, 100% {
+        scale: 1.0;
+        color: #ff2d55;
+    }
+    50% {
+        scale: 1.22;
+        color: #ff6699;
+    }
+}
+
+@keyframes flair-color-shift {
+    0% { color: #ff3366; }
+    20% { color: #ff9933; }
+    40% { color: #33cc66; }
+    60% { color: #33ccff; }
+    80% { color: #cc33ff; }
+    100% { color: #ff3366; }
+}
+
+@keyframes flair-gradient-rainbow {
+    0% { background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff); }
+    50% { background: linear-gradient(135deg, #8b00ff, #0000ff, #00ff00, #ffff00, #ff7f00, #ff0000); }
+    100% { background: linear-gradient(180deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff); }
+}
+
+@keyframes flair-gradient-fire {
+    0% { background: linear-gradient(90deg, #ff1e27, #ff7a00, #ffd600); }
+    50% { background: linear-gradient(120deg, #ffd600, #ff1e27, #ff7a00); }
+    100% { background: linear-gradient(90deg, #ff1e27, #ff7a00, #ffd600); }
+}
+
+@keyframes flair-gradient-ocean {
+    0% { background: linear-gradient(90deg, #0038ff, #00d2ff, #70fff3); }
+    50% { background: linear-gradient(120deg, #70fff3, #0038ff, #00d2ff); }
+    100% { background: linear-gradient(90deg, #0038ff, #00d2ff, #70fff3); }
+}
+
+@keyframes flair-gradient-cyberpunk {
+    0% { background: linear-gradient(90deg, #ff007a, #7a00ff, #00f0ff); }
+    50% { background: linear-gradient(120deg, #00f0ff, #ff007a, #7a00ff); }
+    100% { background: linear-gradient(90deg, #ff007a, #7a00ff, #00f0ff); }
+}
+
+@keyframes flair-gradient-gold {
+    0% { background: linear-gradient(90deg, #c88a1e, #ffd700, #fff3a8); }
+    50% { background: linear-gradient(120deg, #fff3a8, #c88a1e, #ffd700); }
+    100% { background: linear-gradient(90deg, #c88a1e, #ffd700, #fff3a8); }
+}
+
+@keyframes flair-gradient-emerald {
+    0% { background: linear-gradient(90deg, #0f7d42, #10e543, #a4ff00); }
+    50% { background: linear-gradient(120deg, #a4ff00, #0f7d42, #10e543); }
+    100% { background: linear-gradient(90deg, #0f7d42, #10e543, #a4ff00); }
+}
+
+@keyframes flair-gradient-galaxy {
+    0% { background: linear-gradient(90deg, #0b0e2a, #6c1cd1, #e039fd); }
+    50% { background: linear-gradient(120deg, #e039fd, #0b0e2a, #6c1cd1); }
+    100% { background: linear-gradient(90deg, #0b0e2a, #6c1cd1, #e039fd); }
+}
+
+@keyframes flair-gradient-candy {
+    0% { background: linear-gradient(90deg, #ff85b3, #c785ff, #85e3ff); }
+    50% { background: linear-gradient(120deg, #85e3ff, #ff85b3, #c785ff); }
+    100% { background: linear-gradient(90deg, #ff85b3, #c785ff, #85e3ff); }
+}
+
+@keyframes flair-gradient-monochrome {
+    0% { background: linear-gradient(90deg, #222222, #a0a0a0, #ffffff); }
+    50% { background: linear-gradient(120deg, #ffffff, #222222, #a0a0a0); }
+    100% { background: linear-gradient(90deg, #222222, #a0a0a0, #ffffff); }
+}
+
+@keyframes flair-gradient-lava {
+    0% { background: linear-gradient(90deg, #1a0b0b, #e61919, #ff6b08); }
+    50% { background: linear-gradient(120deg, #ff6b08, #1a0b0b, #e61919); }
+    100% { background: linear-gradient(90deg, #1a0b0b, #e61919, #ff6b08); }
+}
+
+/* Core Effect Classes */
+.flair-shake, .flair-pause {
+    color: #ff3b30;
+    animation: flair-shake 0.12s infinite;
+}
+
+.flair-bounce, .flair-speed-up {
+    color: #34c759;
+    animation: flair-bounce 0.35s infinite ease-in-out;
+}
+
+.flair-wave, .flair-slow-down {
+    color: #ffcc00;
+    animation: flair-wave 1.4s infinite ease-in-out;
+}
+
+.flair-pulse, .flair-emit-events {
+    animation: flair-pulse 0.45s infinite alternate ease-in-out;
+}
+
+.flair-color-shift, .flair-one-shot {
+    animation: flair-color-shift 0.9s infinite linear;
+}
+
+/* Gradient Classes */
+.flair-gradient-rainbow {
+    animation: flair-gradient-rainbow 2.0s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-fire, .flair-gradient-sunset {
+    animation: flair-gradient-fire 1.8s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-ocean, .flair-gradient-ice {
+    animation: flair-gradient-ocean 2.0s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-cyberpunk, .flair-gradient-neon {
+    animation: flair-gradient-cyberpunk 1.6s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-gold, .flair-gradient-luxury {
+    animation: flair-gradient-gold 2.2s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-emerald, .flair-gradient-toxic {
+    animation: flair-gradient-emerald 1.9s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-galaxy, .flair-gradient-cosmic {
+    animation: flair-gradient-galaxy 2.5s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-candy, .flair-gradient-pastel {
+    animation: flair-gradient-candy 2.0s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-monochrome, .flair-gradient-silver {
+    animation: flair-gradient-monochrome 2.4s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.flair-gradient-lava, .flair-gradient-magma {
+    animation: flair-gradient-lava 1.7s infinite alternate ease-in-out;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
